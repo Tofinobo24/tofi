@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Piškvorky</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #piskvorkyTable {
+            border-collapse: collapse;
+        }
+
+        #piskvorkyTable td {
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            font-size: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piškvorky</h1>
+    <table id="piskvorkyTable">
+        <tr>
+            <td onclick="hraj(0, 0)"></td>
+            <td onclick="hraj(0, 1)"></td>
+            <td onclick="hraj(0, 2)"></td>
+            <td onclick="hraj(0, 3)"></td>
+            <td onclick="hraj(0, 4)"></td>
+        </tr>
+        <tr>
+            <td onclick="hraj(1, 0)"></td>
+            <td onclick="hraj(1, 1)"></td>
+            <td onclick="hraj(1, 2)"></td>
+            <td onclick="hraj(1, 3)"></td>
+            <td onclick="hraj(1, 4)"></td>
+        </tr>
+        <tr>
+            <td onclick="hraj(2, 0)"></td>
+            <td onclick="hraj(2, 1)"></td>
+            <td onclick="hraj(2, 2)"></td>
+            <td onclick="hraj(2, 3)"></td>
+            <td onclick="hraj(2, 4)"></td>
+        </tr>
+        <tr>
+            <td onclick="hraj(3, 0)"></td>
+            <td onclick="hraj(3, 1)"></td>
+            <td onclick="hraj(3, 2)"></td>
+            <td onclick="hraj(3, 3)"></td>
+            <td onclick="hraj(3, 4)"></td>
+        </tr>
+        <tr>
+            <td onclick="hraj(4, 0)"></td>
+            <td onclick="hraj(4, 1)"></td>
+            <td onclick="hraj(4, 2)"></td>
+            <td onclick="hraj(4, 3)"></td>
+            <td onclick="hraj(4, 4)"></td>
+        </tr>
+    </table>
+
+    <script>
+        // Kód pro hraní Piškvorek v JavaScriptu
+        var aktualniHrac = 'X';
+
+        function hraj(radek, sloupec) {
+            var bunka = document.getElementById("piskvorkyTable").rows[radek].cells[sloupec];
+            if (bunka.innerHTML === '') {
+                bunka.innerHTML = aktualniHrac;
+                zmenHrace();
+            }
+        }
+
+        function zmenHrace() {
+            aktualniHrac = (aktualniHrac === 'X') ? 'O' : 'X';
+        }
+    </script>
+</body>
+</html>
